@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="hookah.png">
+  <title>Bashaa Club Modena | Menu</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+ 
+</style>
+</head>
+<style>
+  #load div, #club div, #modena div {
+    font-size: 2em; /* Ajustez la taille de la police selon vos besoins */
+    color: white;
+  }
+
+  #club, #modena {
+    display: none;
+  }
+</style>
+
+<body class="center-vertical">
+  <div id="load">
+    <div>B</div>
+    <div>A</div>
+    <div>S</div>
+    <div>H</div>
+    <div>A</div>
+    <div>A</div>
+  </div>
+
+  <div id="club">
+    <div>C</div>
+    <div>L</div>
+    <div>U</div>
+    <div>B</div>
+  </div>
+
+  <div id="modena">
+    <div>M</div>
+    <div>O</div>
+    <div>D</div>
+    <div>E</div>
+    <div>N</div>
+    <div>A</div>
+  </div>
+
+  <div class="container" style="display:none;" id="myDiv">
+
+      
+    <a href="bibite.html" class="button">
+      <span style="color: rgb(0, 0, 0);" class="submit">bibite</span>
+      <span class="loading"><i class="fa fa-refresh"></i></span>
+      <span class="check"><i class="fa fa-check"></i></span>
+    </a>
+
+    <a href="analcoliti.html"  class="button">
+      <span style="color: rgb(0, 0, 0);" class="submit">analcoliti</span>
+      <span class="loading"><i class="fa fa-refresh"></i></span>
+      <span class="check"><i class="fa fa-check"></i></span>
+    </a>
+      
+    <a href="alcolici.html"  class="button">
+      <span style="color: rgb(0, 0, 0);" class="submit">alcoliti</span>
+      <span class="loading"><i class="fa fa-refresh"></i></span>
+      <span class="check"><i class="fa fa-check"></i></span>
+    </a>
+
+
+      <nav class="social">
+        <ul>
+          <li><a href="https://www.instagram.com/bashaaclubmodena/" style="color: white;" href="#"><i class="fa fa-instagram"></i>&nbsp;&nbsp;&nbsp;Instagram</a></li>
+          <li><a  style="color: white;" href="tel:05961339636"><i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;Phone</a></li>
+          <li><a  style="color: white;" href="https://web.facebook.com/bashaaclubmodena/?_rdc=1&_rdr"><i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;Facebook</a></li>
+          <li><a href="https://maps.app.goo.gl/UrEX2Q5uvHkL5kxt7" style="color: white;" href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;&nbsp;Maps</a></li>
+        </ul>
+        </ul>
+      </nav>
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll('.button');
+  
+        function toggleClass() {
+          this.classList.toggle('active');
+        }
+  
+        function addClass() {
+          this.classList.add('finished');
+        }
+  
+        function downloadAndAnimate() {
+          toggleClass.call(this);
+          setTimeout(addClass.bind(this), 1000);
+        }
+
+        function resetButton() {
+          this.classList.remove('active');
+          this.classList.remove('finished');
+        }
+  
+        buttons.forEach(button => {
+          button.addEventListener('click', downloadAndAnimate);
+          button.addEventListener('transitionend', toggleClass);
+          button.addEventListener('transitionend', addClass);
+          button.addEventListener('transitionend', resetButton);
+          
+        });
+  
+    
+      });
+    </script>
+    <script>
+      var myVar;
+    
+      function myFunction() {
+        myVar = setTimeout(showPage, 0);
+      }
+
+
+    
+      function showPage() {
+        // Cache la div "load" et affiche la div "club"
+        document.getElementById("load").style.display = "none";
+        document.getElementById("club").style.display = "block";
+        
+        // Configure un nouveau délai pour cacher la div "club" et afficher la div "modena"
+        myVar = setTimeout(function () {
+          document.getElementById("club").style.display = "none";
+          document.getElementById("modena").style.display = "block";
+    
+          // Configure un autre délai pour cacher la div "modena" et afficher la div "myDiv"
+          my = setTimeout(function () {
+            document.getElementById("modena").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+          }, 0);
+        }, 0);
+      }
+    
+      document.addEventListener("DOMContentLoaded", function () {
+        myFunction(); // Appeler manuellement myFunction pour commencer le chronomètre
+      });
+    </script>
+    
+
+  
+  
+</body>
+
+</html>

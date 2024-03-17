@@ -1,0 +1,423 @@
+:root {
+  --color-1: #2c3e50;
+  --color-2: #ffc400;
+  --color-3: rgb(0, 0, 0);
+}
+
+html{background-color: #000;}
+/* Breakpoints */
+:root {
+  --sm: 320px;
+  --med: 768px;
+  --lg: 1024px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  margin: 0; /* Remove default margin */
+}
+
+.container {
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-download {
+  margin-bottom: 0px;
+}
+
+.social {
+  position: fixed;
+  top: 20px;
+  right: 1px; /* Adjust the right distance */
+}
+
+.social ul {
+  padding: 0;
+  list-style: none; /* Remove default list styling */
+}
+
+.social ul li {
+  display: inline-block;
+  margin-left: 10px; /* Adjust the space between icons */
+  background: rgba(0, 0, 0, 0.36);
+  padding: 10px;
+  border-radius: 30px;
+  transition: all 0.5s;
+  margin-top: 10px;
+}
+
+.social ul li:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.social ul li:hover a {
+  color: #000;
+}
+
+.social ul li i {
+  color: #fff;
+  font-size: 20px;
+}
+
+.button {
+  font-size: 130%;
+  /* ... rest of the button styles ... */
+}
+
+/* Add other styles as needed */
+
+/* ... Loader styles ... */
+
+
+.button {
+  font-size: 130%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.5rem;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem 1rem 1rem;
+  background-color: var(--color-2);
+  border: none;
+  border-radius: 0.3125rem;
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.button:before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: lighten(var(--color-3), 10%);
+}
+
+.button span {
+  position: absolute;
+  line-height: 0;
+  i {
+    transform-origin: center center;
+  }
+}
+
+.button span:nth-of-type(1) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.button span:nth-of-type(2) {
+  top: 100%;
+  transform: translateY(0%);
+  font-size: 24px;
+}
+
+.button span:nth-of-type(3) {
+  display: none;
+}
+
+.button.active {
+  background-color: var(--color-3);
+}
+
+.button.active:before {
+  width: 100%;
+  transition: width 3s linear;
+}
+
+.button.active span:nth-of-type(1) {
+  top: -100%;
+  transform: translateY(-50%);
+}
+
+.button.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  i {
+    animation: loading 500ms linear infinite;
+  }
+}
+
+.button.active span:nth-of-type(3) {
+  display: none;
+}
+
+.button.finished {
+  background-color: lighten(var(--color-3), 10%);
+}
+
+.button.finished .submit {
+  display: none;
+}
+
+.button.finished .loading {
+  display: none;
+}
+
+.button.finished .check {
+  display: block !important;
+  font-size: 24px;
+  animation: scale 0.5s linear;
+  i {
+    transform-origin: center center;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(10);
+  }
+  50% {
+    transform: scale(0.2);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  90% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.submit:hover{
+  color: white;
+}
+
+
+
+
+.center-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+
+body.loaded #load {
+  background-color: transparent; /* Revert to transparent background after loading */
+}
+
+#load {
+  position: absolute;
+  width: 72px; /* Adjust the width to accommodate the text */
+  height: auto; /* Set height to auto for dynamic height based on content */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the loader both horizontally and vertically */
+  overflow: visible;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  display: flex;
+  flex-direction: column; /* Stack the divs vertically */
+  align-items: center; /* Center the divs horizontally */
+}
+
+#load div {
+  width: 0px;
+  height: 50px; /* Set a fixed height */
+  opacity: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  animation: move 3s linear infinite;
+  transform: rotate(40deg); /* Rotate the div vertically */
+  color: #ffffff;
+  font-size: 200%;
+  margin-bottom: 5px; /* Add margin between divs */
+}
+
+.loader-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+}
+
+@keyframes move {
+  0% { top: 0; opacity: 0; }
+  35% { top: 41%; transform: rotate(0deg); opacity: 1; }
+  65% { top: 59%; transform: rotate(0deg); opacity: 1; }
+  100% { top: 100%; transform: rotate(-180deg); opacity: 0; }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+  padding: 50px;
+}
+
+#load div:nth-child(2) { animation-delay: 0.2s; }
+#load div:nth-child(3) { animation-delay: 0.4s; }
+#load div:nth-child(4) { animation-delay: 0.6s; }
+#load div:nth-child(5) { animation-delay: 0.8s; }
+
+
+
+
+
+
+body.loaded #club {
+  background-color: transparent; /* Revert to transparent background after loading */
+}
+
+#club {
+  position: absolute;
+  width: 72px; /* Adjust the width to accommodate the text */
+  height: auto; /* Set height to auto for dynamic height based on content */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the loader both horizontally and vertically */
+  overflow: visible;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  display: flex;
+  flex-direction: column; /* Stack the divs vertically */
+  align-items: center; /* Center the divs horizontally */
+}
+
+#club div {
+  width: 0px;
+  height: 50px; /* Set a fixed height */
+  opacity: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  animation: move 3s linear infinite;
+  transform: rotate(40deg); /* Rotate the div vertically */
+  color: #ffffff;
+  font-size: 200%;
+  margin-bottom: 5px; /* Add margin between divs */
+}
+
+.loader-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+}
+
+@keyframes move {
+  0% { top: 0; opacity: 0; }
+  35% { top: 41%; transform: rotate(0deg); opacity: 1; }
+  65% { top: 59%; transform: rotate(0deg); opacity: 1; }
+  100% { top: 100%; transform: rotate(-180deg); opacity: 0; }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+  padding: 50px;
+}
+
+#club div:nth-child(2) { animation-delay: 0.2s; }
+#club div:nth-child(3) { animation-delay: 0.4s; }
+#club div:nth-child(4) { animation-delay: 0.6s; }
+#club div:nth-child(5) { animation-delay: 0.8s; }
+
+
+
+body.loaded #modena {
+  background-color: transparent; /* Revert to transparent background after loading */
+}
+
+#modena {
+  position: absolute;
+  width: 72px; /* Adjust the width to accommodate the text */
+  height: auto; /* Set height to auto for dynamic height based on content */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the loader both horizontally and vertically */
+  overflow: visible;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  display: flex;
+  flex-direction: column; /* Stack the divs vertically */
+  align-items: center; /* Center the divs horizontally */
+}
+
+#modena div {
+  width: 0px;
+  height: 50px;
+  opacity: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  animation: move 4s linear infinite;
+  transform: rotate(40deg); /* Rotate the div vertically */
+  color: #ffffff;
+  font-size: 200%;
+  margin-bottom: 5px; /* Add margin between divs */
+}
+
+.loader-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+}
+
+@keyframes move {
+  0% { top: 0; opacity: 0; }
+  35% { top: 41%; transform: rotate(0deg); opacity: 1; }
+  65% { top: 59%; transform: rotate(0deg); opacity: 1; }
+  100% { top: 100%; transform: rotate(-180deg); opacity: 0; }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+  padding: 50px;
+}
+
+#modena div:nth-child(2) { animation-delay: 0.2s; }
+#modena div:nth-child(3) { animation-delay: 0.4s; }
+#modena div:nth-child(4) { animation-delay: 0.6s; }
+#modena div:nth-child(5) { animation-delay: 0.8s; }
+#modena div:nth-child(6) { animation-delay: 1s; }
+#modena div:nth-child(7) { animation-delay: 1.2s; }

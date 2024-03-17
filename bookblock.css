@@ -1,0 +1,35 @@
+body {
+  background-color: rgb(31, 31, 31);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.bb-bookblock {
+  width: 100%;
+}
+
+.bb-item {
+  width: 100vw;
+  height: calc(100vw * 3650 / 2623); /* Maintain the aspect ratio */
+  position: relative;
+  background: transparent;
+}
+
+.page {
+  width: 80%;
+  height: 80%;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+/* Additional styles as needed for navigation or other elements */
+  
